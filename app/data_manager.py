@@ -14,7 +14,7 @@ class DataManager:
 
         data_folder = os.path.dirname(self.filepath)
         if not os.path.exists(data_folder):
-            os.makedirs(data_folder)
+            os.makedirs(data_folder, exist_ok=True)
 
     def _load_raw_data(self) -> List[Dict[str, Any]]:
         if not os.path.exists(self.filepath):

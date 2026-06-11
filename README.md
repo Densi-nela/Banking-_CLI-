@@ -19,14 +19,15 @@ Banking CLI is a lightweight banking system that runs entirely in your terminal.
 ```
 banking-cli/
 ├── app/
-    |- __main__.py        # Project entry point
-│   
+│   ├── __main__.py        # Project entry point
 │   ├── bank.py           # CLI interface layer (user interaction)
 │   ├── models.py         # Business logic layer (validation & instances)
 │   └── data_manager.py   # Data persistence layer (JSON storage)
 ├── data/
 │   └── accounts.json     # User account data storage
-├
+├── tests/
+│   ├── test_models.py    # Unit tests for business logic
+│   └── test_data_manager.py # Unit tests for data persistence
 └── README.md
 ```
 
@@ -69,7 +70,21 @@ git clone git@github.com:Densi-nela/Banking-_CLI-.git
 cd CLI
 ```
 
-No additional dependencies need to be installed! 
+No additional dependencies need to be installed for the main application!
+
+## Testing
+
+This project uses `pytest` for testing.
+
+### Install Testing Dependencies
+```bash
+pip install pytest pytest-mock
+```
+
+### Run Tests
+```bash
+PYTHONPATH=. pytest
+```
 
 ##  Usage
 
